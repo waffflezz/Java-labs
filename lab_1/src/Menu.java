@@ -36,7 +36,12 @@ class Menu {
           break;
         case 2:
           System.out.println("Enter text length");
-          text = Text.randomText(new Random(), intInput());
+          int length = intInput();
+          if (length < 0) {
+            System.err.println("Length < 0!");
+            break;
+          }
+          text = Text.randomText(new Random(), length);
           System.out.println("Your text: " + text);
           flag = false;
           break;
